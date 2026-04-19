@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cover Letter Generator</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Cover Letter Generator</h1>
+      <p class="subtitle">Paste a job description and get a tailored cover letter in seconds.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel input-panel">
+        <div class="field">
+          <label for="job-description">Job Description</label>
+          <textarea
+            id="job-description"
+            placeholder="Paste the full job description here..."
+            rows="14"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label>Tone / Style</label>
+          <div class="tone-selector" role="group" aria-label="Tone selection">
+            <button class="tone-btn active" data-tone="formal">Formal</button>
+            <button class="tone-btn" data-tone="conversational">Conversational</button>
+            <button class="tone-btn" data-tone="enthusiastic">Enthusiastic</button>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="generate-btn">
+          <span class="btn-text">Generate Cover Letter</span>
+          <span class="btn-spinner" hidden>Generating...</span>
+        </button>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="output-header">
+          <label for="cover-letter-output">Cover Letter</label>
+          <button id="copy-btn" class="copy-btn" disabled>Copy to Clipboard</button>
+        </div>
+        <textarea
+          id="cover-letter-output"
+          placeholder="Your generated cover letter will appear here. You can edit it directly before copying."
+          rows="20"
+        ></textarea>
+        <p id="error-message" class="error-message" hidden></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
